@@ -8,10 +8,6 @@ require('dotenv').config()
 
 
 
-
-// app.get('/hello',(req,res)=>{
-//     res.send("task manager app");
-// })
 app.use(express.static('./public'));
 
 
