@@ -5,15 +5,15 @@ const app=express()
 const taskes=require('./routes/tasks')
 app.use(express.json());
 require('dotenv').config()
-
-
+const notFound=require('./middleware/not-found')
+const errorHandelerMiddlewear=require('./middleware/error-handeler')
 
 app.use(express.static('./public'));
 
 
 app.use('/api/v1/taskes',taskes);
-
-
+app.use(notFound);
+app.use(errorHandelerMiddlewear)
 const port=5000
 
 const start=async ()=>{
